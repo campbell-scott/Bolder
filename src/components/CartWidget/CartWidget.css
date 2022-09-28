@@ -1,0 +1,26 @@
+.contcarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.carrito{
+    background-image: url("./assets/carrito.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    transition: all 250ms;
+}
+.carrito:hover{
+    transform: scale(1.1);
+}
+#contador{
+    margin-left: 15px;
+    color: white;
+    font-size: 1.2rem;
+}

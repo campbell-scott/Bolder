@@ -1,0 +1,9 @@
+@font-face {
+    font-family: The Gunslinger Waterdrop;
+    src: url("../fonts/Gunslinger.otf");
+}
+.bienvenida{
+    font-family: The Gunslinger Waterdrop;
+    font-size: 7rem;
+    margin-top: 5%;
+}

@@ -1,0 +1,37 @@
+@font-face {
+    font-family: The Gunslinger Waterdrop;
+    src: url("../fonts/Gunslinger.otf");
+}
+#header{
+    background-color: #6600a1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.marca{
+    width: 13%;
+}
+.btn-primary{
+    background-color: transparent;
+    --bs-btn-border-color: none;
+    font-size: 1.2rem;
+}
+.btn:first-child:hover{
+    background-color: transparent;
+    color: #b3ff00;
+}
+.dropdown-menu[data-bs-popper]{
+    left: 20%;
+    box-shadow: 0 1px 8px 1px black;
+    --bs-dropdown-padding-y: 0;
+}
+.dropdown-menu{
+    --bs-dropdown-link-active-bg:  rgb(170, 170, 170);
+    --bs-dropdown-link-active-color: black;
+}
+.dropdown-item.active{
+    color: #b3ff00;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.separador{
+    border-bottom: solid 2px black;
+}
