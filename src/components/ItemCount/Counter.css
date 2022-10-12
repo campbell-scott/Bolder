@@ -1,0 +1,61 @@
+.flexRow{
+    margin: 3% 0 3% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.botonResta, .botonSuma{
+    margin: 1px 5px 0 5px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 250ms;
+}
+.botonResta{
+    background-image: url('../assets/menos.png');
+}
+.botonSuma{
+    background-image: url('../assets/mas.png');
+}
+.botonResta:hover, .botonSuma:hover{
+    transform: scale(1.1);
+}
+.cantCarrito{
+    width: 70px;
+    text-align: center;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+}
+.cantCarrito::-webkit-outer-spin-button,
+.cantCarrito::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.cantCarrito[type=number] {
+    -moz-appearance:textfield;
+}
+.borde{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+.aCarrito{
+    width: 200px;
+    margin-left: 25px;
+    border-radius: 15px;
+    background-color: #6600a1;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.aCarrito:hover{
+    background-color: #8300cf;
+}

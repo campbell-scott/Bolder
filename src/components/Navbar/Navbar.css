@@ -24,13 +24,27 @@
     box-shadow: 0 1px 8px 1px black;
     --bs-dropdown-padding-y: 0;
 }
-.dropdown-menu{
-    --bs-dropdown-link-active-bg:  rgb(170, 170, 170);
-    --bs-dropdown-link-active-color: black;
+.displayFlex{
+    display: flex;
+    flex-direction: column;
 }
-.dropdown-item.active{
+.categorias{
+    padding: 3% 0 3% 7%;
+    text-decoration: none;
+    color: black;
+}
+.categorias:hover{
+    background-color: grey;
     color: #b3ff00;
-    background-color: rgba(0, 0, 0, 0.55);
+}
+.categoriasActive{
+    padding: 3% 0 3% 7%;
+    text-decoration: none;
+    background-color: grey;
+    color: #b3ff00;
+}
+.categoriasActive:hover{
+    color: #b3ff00;
 }
 .separador{
     border-bottom: solid 2px black;
