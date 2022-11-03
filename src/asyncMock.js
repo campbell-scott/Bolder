@@ -1,8 +1,22 @@
+import { collection, addDoc } from "firebase/firestore"
+import { db } from '../../services/firebase';
+
 const products = [
     {id: '1', name: 'Bold', price: 5600, category: 'remeras', img: '/img/remera1.png', description: 'remera negra', stock: 35},
     {id: '2', name: 'Regular', price: 11500, category: 'buzos', img: '/img/buzo.png', description: 'buzo negro', stock: 30},
     {id: '3', name: 'Condensed', price: 6000, category: 'remeras', img: '/img/remera2.png', description: 'remera blanca', stock: 22}
 ]
+
+const productsRef = collection(db, 'products')
+
+const addAllProducts = () => {
+    products.forEach(async prod => {
+        await addDoc(productsRef, prod)
+    })
+}
+
+
+
 
 export const getProducts = () => {
     return new Promise((resolve) => {

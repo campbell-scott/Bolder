@@ -1,9 +1,10 @@
 import './ItemListContainer.css'
-import { getProductByCategory, getProducts } from '../../asyncMock'
 import { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
@@ -13,10 +14,18 @@ const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        const asyncFunction = categoryId ? getProductByCategory : getProducts
-        
-        asyncFunction(categoryId).then(response => {
-            setProducts(response)
+        const collectionRef = categoryId ? query(collection( db, 'products' ), where('category', '==', categoryId)) : collection(db, 'products')
+       
+        getDocs(collectionRef).then(response => {
+            
+            const productsAdapted = response.docs.map(doc => {
+                const data = doc.data()
+                
+                return { id: doc.id, ...data }
+            })
+            
+            setProducts(productsAdapted)
+
         }).catch(error => {
             console.log(error)
         }).finally(() => {
@@ -25,7 +34,11 @@ const ItemListContainer = () => {
     }, [categoryId]) 
     
     if(loading) {
-        return <Spinner animation="border" variant="dark" />
+        return(
+            <div style={{margin: '3%'}}>
+                <Spinner animation="border" variant="dark" />
+            </div>
+        )
     }
 
     return(

@@ -1,0 +1,18 @@
+.back{
+    margin-top: 1%;
+    left: 20px;
+    position: absolute;
+    background-color: #6600a1;
+    color: white;
+    border-radius: 15px;
+}
+.back:hover{
+    background-color: #8300cf;
+}
+.back img{
+    width: 40px;
+}
+.spinner{
+    width: 55px;
+    height: 55px;
+}

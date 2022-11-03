@@ -26,3 +26,19 @@
     font-size: 1.2rem;
     margin: 5% 0 5% 0;
 }
+.finalizar{
+    margin: 7% 0 7% 0;
+    width: 350px;
+    border-radius: 15px;
+    background-color: #6600a1;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid black 2px;
+    padding: 3px;
+}
+.finalizar:hover{
+    background-color: #8300cf;
+    color: white;
+}

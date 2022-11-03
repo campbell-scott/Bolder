@@ -1,0 +1,61 @@
+.noElementos{
+    font-size: 1.7rem;
+    padding: 5%;
+    font-weight: 700;
+}
+.verProductos{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #6600a1;
+}
+.verProductos:hover{
+    color: #b3ff00;
+}
+.contenedor{
+    margin: auto;
+    width: 80%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: solid 5px #6600a1;
+    border-right: solid 5px #6600a1;
+    border-bottom: solid 5px #6600a1;
+}
+.total{
+    border-bottom: #6600a1 solid 5px;
+    border-top: #6600a1 solid 5px;
+    margin: 0;
+    padding: 0 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.3rem;
+}
+.total p{
+    margin: 0;
+}
+.navegaCF{
+    font-size: 1.2rem;
+    text-decoration: none;
+    width: 200px;
+    height: 45px;
+    color: white;
+    border: #6600a1;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #6600a1;
+}
+.finalizarC:hover{
+    text-decoration: none;
+    color: #b3ff00;
+}
+.direcc{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+margin-top: 3%;
+}

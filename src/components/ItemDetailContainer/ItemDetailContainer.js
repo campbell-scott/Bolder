@@ -1,29 +1,43 @@
 import { useEffect, useState } from "react";
-import { getProductById } from "../../asyncMock";
 import Spinner from 'react-bootstrap/Spinner';
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import './ItemDetailContainer.css'
+import Atras from '../assets/atras.png'
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../services/firebase';
 
 const ItemDetailsContainer = () => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
     const { productId } = useParams()
+    const navegate = useNavigate()
 
     useEffect(() => {
-        getProductById(productId).then(response => {
-            setProduct(response)
+        const docRef = doc(db, 'products', productId)
+
+        getDoc(docRef).then(response => {
+            const data = response.data()
+            const productAdapted = { id: response.id, ...data }
+
+            setProduct(productAdapted)
         }).finally(() => {
             setLoading(false)
         })
     })
 
     if(loading) {
-        return <Spinner animation="border" variant="dark" />
+        return(
+            <div style={{margin: '3%'}}>
+                <Spinner animation="border" variant="dark" />
+            </div>
+        )
     }
 
     return(
         <div>
-            <ItemDetail prod={product} /> 
+            <button className="back" onClick={() => navegate(-1)}><img src={Atras} alt= 'atras'/></button>
+            <ItemDetail {...product} /> 
         </div>
     )
 }

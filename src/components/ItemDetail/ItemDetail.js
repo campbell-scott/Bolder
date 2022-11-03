@@ -1,28 +1,42 @@
 import './ItemDetail.css'
 import Counter from '../ItemCount/Counter'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
+import { NotificationContext } from '../../notification/NotificationService'
 
-const ItemDetail = ({ prod }) => {
-    const handleOnAdd = () => {
-        console.log('Se agrego al carrito')
+const ItemDetail = ({ id, name, price, img, description, stock }) => {
+    const { addItem, isInCart } = useContext(CartContext)
+    const { setNotification } = useContext(NotificationContext)
+    const [ size, setSize ] = useState('S')
+
+    const handleOnAdd = (quantity) => {
+        const productToAdd = {
+            id, name, img, price, quantity, size
+        }
+        addItem(productToAdd)
+        setNotification('success', 'Se agrego al carrito')
     }
-    console.log(prod.img)
-
+    
     return(
         <div className='dFlex'>
             <div className='col-12 col-md-8 pl-md-3 pr-md-3'>
-                <img className='imgProduc' src={prod.img} alt={prod.name}/>
+                <img className='imgProduc' src={img} alt={name}/>
             </div>
             <div className='flexi'>
-                <h1 className='tituloProduc'>{prod.name}</h1>
-                <p className='precioProduc'>$ {prod.price}</p>
-                <select className='talleProduc'>
-                    <option value={'S'} defaultValue>S</option>
+                <h1 className='tituloProduc'>{name}</h1>
+                <p className='precioProduc'>$ {price}</p>
+                <select className='talleProduc' value={size} onChange={(e) => setSize(e.target.value)}>
+                    <option value={'S'}>S</option>
                     <option value={'M'}>M</option>
                     <option value={'L'}>L</option>
                     <option value={'XL'}>XL</option>
                 </select>
-                <Counter stock={prod.stock} onAdd={handleOnAdd}/>
-                <h3>{prod.description}</h3>
+                <h3>{description}</h3>
+                {!isInCart(id)
+                    ? <Counter stock={stock} onAdd={handleOnAdd}/>
+                    : <Link to={'/cart'} className='finalizar'>Carrito</Link>
+                }
             </div>
         </div>
     )

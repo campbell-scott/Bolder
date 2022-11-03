@@ -1,0 +1,19 @@
+.checkoutCart{
+    margin: 3%;
+    border-bottom: solid 2px #6600a1;
+}
+.checkFlex{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    margin: auto;
+}
+.checkFlex p{
+    margin-bottom: 0;
+}
+.checkFlex img{
+    width: 80px;
+}

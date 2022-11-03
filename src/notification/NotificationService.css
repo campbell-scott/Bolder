@@ -1,0 +1,22 @@
+.success{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: auto;
+    padding: 10px 20px 10px 20px;
+    color: #2c5005;
+    background-color: #DFF2BF;
+    border: solid 2px black;
+    border-radius: 6px;
+}
+
+.error{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: auto;
+    background-color: rgb(141, 41, 41);
+    color: white;
+    border: solid 2px black;
+    padding: 10px 20px 10px 20px;
+}

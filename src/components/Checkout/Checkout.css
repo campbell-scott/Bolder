@@ -1,0 +1,61 @@
+
+.formFlex{
+    display: flex;
+    flex-direction: row;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 3% 5% 3% 5%;
+    background-color: #6600a1;
+    border-radius: 15px;
+    height: 85vh;
+    width: 60%;
+}
+.formTitle{
+    margin-top: 3%;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #b3ff00;
+
+}
+.form{
+    width: 80%;
+    height: 7%;
+    background-color: white;
+    color: black;
+    font-size: 1.3rem;
+    border: none;
+    border-bottom: solid 3px white;
+    margin: 5% 10% 0 10%;
+    border-radius: 5px;
+}
+.form:focus{
+    outline: 0 none;
+}
+.formButton{
+    margin: 9% 35% 0 35%;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    width: 30%;
+    height: 2.5rem;
+    font-size: 1.5rem;
+}
+.formButton:hover{
+    background-color: #b3ff00;
+}
+.checkCart{
+    width: 25%;
+    margin: 3% 5% 3% 0%;
+    border: solid 3px #6600a1;
+    border-radius: 15px;
+}
+.checkTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5%;
+    font-size: 1.5rem;
+}
