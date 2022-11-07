@@ -5,12 +5,15 @@ import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { db } from '../../services/firebase';
+import { NotificationContext } from '../../notification/NotificationService'
+import { useContext } from 'react';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
-    
+    const { setNotification } = useContext(NotificationContext)
+
     useEffect(() => {
         setLoading(true)
 
@@ -27,7 +30,7 @@ const ItemListContainer = () => {
             setProducts(productsAdapted)
 
         }).catch(error => {
-            console.log(error)
+            setNotification('error', 'Hubo un error con el servidor, Por favor intentelo denuevo mas tarde')
         }).finally(() => {
             setLoading(false)
         })
