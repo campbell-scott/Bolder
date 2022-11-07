@@ -20,7 +20,7 @@ const Checkout = () => {
     const navigate = useNavigate()
 
     const createOrder = async () => {
-        if ( email === '' && name === '' && phone === '' ) {
+        if ( !email || !name || !phone ) {
             setNotification('error', 'Complete todos los campos del formulario')
         } else if ( email !== emailConfirmation ) {
             setNotification('error', 'La confirmacion del E-mail es incorrecta')
