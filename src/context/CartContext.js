@@ -8,10 +8,22 @@ export const CartProvider = ({children}) => {
     const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
-        const totalQty = getQuantity()
-        setTotalQuantity(totalQty)
-        const tPrice = priceTotal()
-        setTotalPrice(tPrice)
+      const getQuantity = () => {
+        let accu = 0
+        cart.forEach(prod => { accu += prod.quantity })
+        return accu
+      }
+    
+      const priceTotal = () => {
+        let accu = 0
+        cart.forEach(prod => { accu += prod.quantity * prod.price })
+        return accu
+      }
+      
+      const totalQty = getQuantity()
+      setTotalQuantity(totalQty)
+      const tPrice = priceTotal()
+      setTotalPrice(tPrice)
     }, [cart])
 
     const addItem = (productToAdd) => {
@@ -29,18 +41,6 @@ export const CartProvider = ({children}) => {
     const removeItem = (id) => {
         const cartWithoutProduct = cart.filter(prod => prod.id !== id)
         setCart(cartWithoutProduct)
-    }
-
-    const getQuantity = () => {
-        let accu = 0
-        cart.forEach(prod => { accu += prod.quantity })
-        return accu
-    }
-    
-    const priceTotal = () => {
-      let accu = 0
-      cart.forEach(prod => { accu += prod.quantity * prod.price })
-      return accu
     }
 
     const clearCart = () => {

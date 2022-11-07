@@ -5,6 +5,8 @@
     background-color: #6600a1;
     color: white;
     border-radius: 15px;
+    padding: 5px;
+    width: 80px;
 }
 .back:hover{
     background-color: #8300cf;

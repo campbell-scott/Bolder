@@ -41,7 +41,7 @@ const NavBar = () => {
             <DropdownButton className='col-12' as={ButtonGroup} title="Productos" id="bg-nested-dropdown">
               <div className='displayFlex'>
                 { categories.map(cat => (
-                  <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({isActive}) => isActive ? 'categoriasActive separador' : 'categorias separador'}>{cat.label}</NavLink>
+                  <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({isActive}) => isActive ? 'categoriasActive' : 'categorias'}>{cat.label}</NavLink>
                 )) }
               </div>
             </DropdownButton>

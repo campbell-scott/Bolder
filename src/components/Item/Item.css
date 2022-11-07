@@ -1,23 +1,27 @@
 .flexProducto{
-    background-color: rgb(238, 238, 238);
-    width: 28%;
+    width: 21%;
     transition: all 250ms;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 3px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
     padding: 1%;
+    margin: 2% auto;
+    border-top: grey solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .flexProducto:hover{
     transform: scale(1.05);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
 }
 .fotoProducto{
-    width: 85%;
+    height: 320px;
 }
 .nombreProducto{
     
 }
 .precioProducto{
-
+    font-size: 1.1rem;
 }
 .detalle{
     text-decoration: none;
@@ -25,7 +29,9 @@
     border: solid 2px black;
     padding: 1%;
     border-radius: 5px;
+    width: 115px;
     background-color: #6600a1;
+    font-size: 1.2rem;
 }
 .detalle:hover{
     color: #b3ff00;

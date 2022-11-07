@@ -4,8 +4,6 @@
 }
 #header{
     background-color: #6600a1;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 .marca{
     width: 13%;
@@ -45,7 +43,4 @@
 }
 .categoriasActive:hover{
     color: #b3ff00;
-}
-.separador{
-    border-bottom: solid 2px black;
 }

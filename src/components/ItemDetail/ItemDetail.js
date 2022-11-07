@@ -11,16 +11,20 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
     const [ size, setSize ] = useState('S')
 
     const handleOnAdd = (quantity) => {
-        const productToAdd = {
-            id, name, img, price, quantity, size
+        if ( quantity > stock  ) {
+            setNotification('error', '¡Uy! No tenemos más stock de este producto para agregarlo al carrito')
+        } else {
+            const productToAdd = {
+                id, name, img, price, quantity, size
+            }
+            addItem(productToAdd)
+            setNotification('success', 'Se agrego al carrito')
         }
-        addItem(productToAdd)
-        setNotification('success', 'Se agrego al carrito')
     }
     
     return(
         <div className='dFlex'>
-            <div className='col-12 col-md-8 pl-md-3 pr-md-3'>
+            <div className='contImg'>
                 <img className='imgProduc' src={img} alt={name}/>
             </div>
             <div className='flexi'>
@@ -35,7 +39,10 @@ const ItemDetail = ({ id, name, price, img, description, stock }) => {
                 <h3>{description}</h3>
                 {!isInCart(id)
                     ? <Counter stock={stock} onAdd={handleOnAdd}/>
-                    : <Link to={'/cart'} className='finalizar'>Carrito</Link>
+                    : <div className='final'>
+                        <Link to={'/'} className='finalizar'>Seguir comprando</Link>
+                        <Link to={'/cart'} className='finalizar'>Ir al carrito</Link>
+                    </div> 
                 }
             </div>
         </div>

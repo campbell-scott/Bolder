@@ -3,6 +3,7 @@ import './Counter.css'
 
 const Counter = ({stock, onAdd}) => {
     const [quantity, setQuantity] = useState(1)
+
     const add = () => {
         if (quantity < stock) {
             setQuantity(quantity +1)
@@ -13,6 +14,7 @@ const Counter = ({stock, onAdd}) => {
             setQuantity(quantity -1)
         }
     }
+
     return(
         <div className="flexRow">
             <div className="borde">
